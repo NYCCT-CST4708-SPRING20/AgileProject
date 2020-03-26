@@ -11,7 +11,6 @@ namespace AgileProject.DAO
 {
     class MovieDAO
     {
-
         /// <summary>
         ///  Get Connection String from Configuration
         /// </summary>
