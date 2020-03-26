@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F3B96B36-1762-4384-9902-B7EDBFC31730}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AgileProject</RootNamespace>
+    <AssemblyName>AgileProject</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.19\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.19\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\CCDAO.cs" />
+    <Compile Include="DAO\MovieDAO.cs" />
+    <Compile Include="DAO\MyListDAO.cs" />
+    <Compile Include="DAO\Order.cs" />
+    <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="Forms\BillingFormWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BillingFormWindow.designer.cs">
+      <DependentUpon>BillingFormWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserSettingWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserSettingWindow.designer.cs">
+      <DependentUpon>UserSettingWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginWindow.designer.cs">
+      <DependentUpon>LoginWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainWindow.designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ForgotPasswordWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ForgotPasswordWindow.designer.cs">
+      <DependentUpon>ForgotPasswordWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\movie.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\BillingFormWindow.resx">
+      <DependentUpon>BillingFormWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserSettingWindow.resx">
+      <DependentUpon>UserSettingWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginWindow.resx">
+      <DependentUpon>LoginWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ForgotPasswordWindow.resx">
+      <DependentUpon>ForgotPasswordWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Resources\Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Posters\2V2cCYJII6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\3WH9iLflYi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\5agCsErt9U.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\8FHogl5N2w.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\8hUNFQkdLj.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\A4fLGjEq43.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\A9lI3dSTMu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\abLvB1uZK3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\alypPI8MSn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\aZ4Q0ZZ33u.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\bGpgi0pQZ5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\BZNTaKeubF.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\c8WIHhpqj0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\clBaMupjWh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\coZTN91NCJ.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\Cqk2xeP1qu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\dgPoTSTiFs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\DJugoI3kKP.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\dkoFLzJprY.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\dvHu2uZUpR.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\DwSOWWpXdA.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\epfhZQIOFJ.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\FA7lJe9sZY.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\FQEIC0bvrv.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\FqgqUAXF4d.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\fXJ4rN9LfC.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\fzAAJUiuGn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\fZzh4yBEQ8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\HDs2uRzAic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\HSvjappYI7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\hWKdjkWq4k.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\hYbgI5Bu4w.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\ib1Czl5rui.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\iRqNsSQRxX.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\J7mDVj7u64.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\jcpg9gxHfq.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\jflUKj78wL.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\k221DmoE72.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\L5uYwITnCn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\L6udQLRh2z.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\MIV36aQwc2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\n9TsnKGfQq.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\NiQQO1S1Er.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\np68l8SunK.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\NpZmv8laQs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\Nuf5nqlRzW.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\ONZVrV2021.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\ov5sjQQxTN.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\puGZ45eKZP.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\PVEvvyeeqf.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\PZgIeQChfO.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\Q9IAJxprvF.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\Q61GSa0Iif.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\qKOEUc7s4r.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\QYJWcrMsVj.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\S8a0lNBPnj.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\saHhCVHB5E.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\sHwhqxCHm3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\sJzOJzRp7j.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\STHuEObBj2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\t6RpFvbQ5G.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\T9zGX5Rxrv.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\tDztQffPOU.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\tjJdGy2YYi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\to0kSuFZaw.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\tSh29PiYhv.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\TxpRA1wOoU.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\uBNIfTKbEr.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\vi2KGkmZH4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\vZZ2j8ogrj.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\wbs4lBG3hH.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\wgP33rR1lf.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\Wk6yyfJvhG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\wrPtiAGiM8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\XDT3Tg65DS.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\xkhuIzjiVp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\YlnydvyT6N.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\YrvgwOKid7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\YuYFvI0bko.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posters\ZDqzf17LMR.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\App\Sent-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\App\Email-Reply-icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
