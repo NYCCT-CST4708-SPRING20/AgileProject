@@ -20,6 +20,7 @@ namespace AgileProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginWindow());
+            // this is a test
         }
     }
 }
