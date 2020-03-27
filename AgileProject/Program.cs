@@ -1,4 +1,5 @@
 ﻿using BillingWindow;
+using LoginUser;
 using MovieMain;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace AgileProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+            Application.Run(new LoginWindow());
         }
     }
 }
