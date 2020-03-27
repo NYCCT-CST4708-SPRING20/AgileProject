@@ -21,6 +21,7 @@ namespace AgileProject
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginWindow());
             // this is a test
+            // this is the second test
         }
     }
 }
