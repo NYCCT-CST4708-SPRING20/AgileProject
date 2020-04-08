@@ -1,4 +1,4 @@
-﻿namespace MovieMain
+﻿namespace AgileProject.Forms
 {
     partial class MainWindow
     {

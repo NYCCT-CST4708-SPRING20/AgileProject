@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MovieMain
+namespace AgileProject.Forms
 {
     public partial class MainWindow : Form
     {
