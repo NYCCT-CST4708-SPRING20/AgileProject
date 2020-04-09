@@ -79,17 +79,23 @@
     <Compile Include="Forms\BillingFormWindow.designer.cs">
       <DependentUpon>BillingFormWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\LoginWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginWindow.Designer.cs">
+      <DependentUpon>LoginWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RegistrationWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegistrationWindow.Designer.cs">
+      <DependentUpon>RegistrationWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserSettingWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\UserSettingWindow.designer.cs">
       <DependentUpon>UserSettingWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\LoginWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\LoginWindow.designer.cs">
-      <DependentUpon>LoginWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainWindow.cs">
       <SubType>Form</SubType>
@@ -114,11 +120,14 @@
     <EmbeddedResource Include="Forms\BillingFormWindow.resx">
       <DependentUpon>BillingFormWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserSettingWindow.resx">
-      <DependentUpon>UserSettingWindow.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegistrationWindow.resx">
+      <DependentUpon>RegistrationWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserSettingWindow.resx">
+      <DependentUpon>UserSettingWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

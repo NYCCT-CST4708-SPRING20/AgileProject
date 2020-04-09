@@ -11,7 +11,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Data.SqlClient;
 
-namespace forgotPassword
+namespace AgileProject.Forms
 {
     public partial class ForgotPasswordWindow : Form
     {

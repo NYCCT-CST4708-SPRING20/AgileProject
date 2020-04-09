@@ -1,7 +1,4 @@
-﻿using agileProject;
-using BillingWindow;
-using LoginUser;
-using MovieMain;
+﻿using AgileProject.Forms;
 using System;
 using System.Collections.Generic;
 using System.Linq;

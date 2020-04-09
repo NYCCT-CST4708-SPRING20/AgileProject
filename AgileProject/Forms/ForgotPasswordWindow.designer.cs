@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace forgotPassword
+namespace AgileProject.Forms
 {
     partial class ForgotPasswordWindow
     {

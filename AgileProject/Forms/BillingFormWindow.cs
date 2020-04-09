@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BillingWindow
+namespace AgileProject.Forms
 {
     public partial class BillingFormWindow : Form
     {

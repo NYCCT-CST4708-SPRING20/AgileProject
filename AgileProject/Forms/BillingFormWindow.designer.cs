@@ -1,4 +1,4 @@
-﻿namespace BillingWindow
+﻿namespace AgileProject.Forms
 {
     partial class BillingFormWindow
     {

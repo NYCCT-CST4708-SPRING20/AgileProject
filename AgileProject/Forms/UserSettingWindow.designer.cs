@@ -1,4 +1,4 @@
-﻿namespace agileProject
+﻿namespace AgileProject.Forms
 {
     partial class UserSettingWindow
     {
