@@ -46,8 +46,6 @@ namespace AgileProject.Model
             this.writers = writers;
         }
 
-        
-
         public override string ToString()
         {
             return $"{{{nameof(movieId)}={movieId}, {nameof(movieName)}={movieName}, {nameof(year)}={year.ToString()}, {nameof(movieLength)}={movieLength.ToString()}, {nameof(genre)}={genre}, {nameof(purchasePrice)}={purchasePrice.ToString()}, {nameof(movieDescription)}={movieDescription}, {nameof(actors)}={actors}, {nameof(producers)}={producers}, {nameof(directors)}={directors}, {nameof(writers)}={writers}}}";

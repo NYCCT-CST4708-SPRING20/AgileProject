@@ -79,6 +79,12 @@
     <Compile Include="Forms\BillingFormWindow.designer.cs">
       <DependentUpon>BillingFormWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MovieInfoWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MovieInfoWindow.Designer.cs">
+      <DependentUpon>MovieInfoWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,7 +115,8 @@
     <Compile Include="Forms\ForgotPasswordWindow.designer.cs">
       <DependentUpon>ForgotPasswordWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\movie.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Movie.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resource1.Designer.cs">
@@ -119,6 +126,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\BillingFormWindow.resx">
       <DependentUpon>BillingFormWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MovieInfoWindow.resx">
+      <DependentUpon>MovieInfoWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>
@@ -163,7 +173,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\App\UserIcon.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Posters\2V2cCYJII6.jpg" />
   </ItemGroup>
