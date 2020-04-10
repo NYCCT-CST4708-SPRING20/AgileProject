@@ -21,16 +21,18 @@ namespace AgileProject.DAO
         /// Get user's movie list
         /// </summary>
         /// <param name="accountID"></param>
-        /// <returns></returns>
+        /// <returns>A list of movies</returns>
         public List<Movie> GetMyList(int accountID)
         {
             List<Movie> list = new List<Movie>();
 
-            MySqlConnection conn = new MySqlConnection();
+            MySqlConnection conn = new MySqlConnection(connStr);
             MySqlCommand comm = new MySqlCommand();
             comm.Connection = conn;
-            comm.CommandText = "SELECT MOVIE_ID, MOVIE_NAME, GENRE, PURCHASE_PRICE FROM MOVIE "
-                            + " WHERE MOVID_ID IN (SELECT MOVIE_ID FROM MYLIST WHERE ACCOUNT_ID = @ACCOUNTID)";
+            comm.CommandText = " SELECT MYLIST.MOVIE_ID, MOVIE.MOVIE_NAME, MOVIE.GENRE, MOVIE.PURCHASE_PRICE " +
+                               " FROM MYLIST " +
+                               " INNER JOIN MOVIE ON MYLIST.MOVIE_ID = MOVIE.MOVIE_ID " +
+                               " WHERE MYLIST.ACCOUNT_ID = @ACCOUNTID ";
             comm.Parameters.AddWithValue("@ACCOUNTID", accountID);
 
             try
@@ -58,7 +60,7 @@ namespace AgileProject.DAO
             }
             conn.Close();
 
-            return null;
+            return list;
         }
 
         /// <summary>
@@ -68,7 +70,7 @@ namespace AgileProject.DAO
         /// <param name="movieID">movie id of a movie</param>
         public void AddToList(int accountID, String movieID)
         {
-            MySqlCommand comm = new MySqlCommand("INSERT INTO MYLIST VALUES (@ACCOUNTID, @MOVIEID)");
+            MySqlCommand comm = new MySqlCommand("INSERT INTO MYLIST (ACCOUNT_ID, MOVIE_ID) VALUES (@ACCOUNTID, @MOVIEID)");
             comm.Parameters.AddWithValue("@ACCOUNTID", accountID);
             comm.Parameters.AddWithValue("@MOVIEID", movieID);
             UpdateMyList(ref comm);
@@ -81,7 +83,7 @@ namespace AgileProject.DAO
         /// <param name="movieID">movie id of a movie</param>
         public void DelFromList(int accountID, String movieID)
         {
-            MySqlCommand comm = new MySqlCommand("DELETE FROM MYLIST WHERE ACCOUNT_ID = @ACCOUNT AND MOVIE_ID = @MOVIEID");
+            MySqlCommand comm = new MySqlCommand("DELETE FROM MYLIST WHERE ACCOUNT_ID = @ACCOUNTID AND MOVIE_ID = @MOVIEID");
             comm.Parameters.AddWithValue("@ACCOUNTID", accountID);
             comm.Parameters.AddWithValue("@MOVIEID", movieID);
             UpdateMyList(ref comm);
