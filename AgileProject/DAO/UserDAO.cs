@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using AgileProject.Models;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace AgileProject.DAO
         /// <summary>
         /// Login Authentication
         /// </summary>
-        /// <param name="email">emaill address of the account</param>
+        /// <param name="email">email address of the account</param>
         /// <param name="pw">password for this account</param>
         /// <returns>true/false of login successful</returns>
         public Boolean Authentication(String email, String pw)
@@ -27,12 +28,78 @@ namespace AgileProject.DAO
             Boolean authenticated = false;
 
             
-            MySqlCommand comm = new MySqlCommand(" SELECT COUNT(*) FROM ACCOUTN WHERE EMAIL_ADDRESS = @EMAIL AND PASSWORD = SHA2(CONCAT(@PASSWORD, SALT), 256) ");
+            MySqlCommand comm = new MySqlCommand(" SELECT COUNT(*) FROM ACCOUNT WHERE EMAIL_ADDRESS = @EMAIL AND PASSWORD = SHA2(CONCAT(@PASSWORD, SALT), 256) ");
             comm.Parameters.AddWithValue("@EMAIL", email);
             comm.Parameters.AddWithValue("@PASSWORD", pw);
 
             Check(ref comm, ref authenticated);
             return authenticated;
+        }
+
+        /// <summary>
+        /// Get the account id of the user
+        /// </summary>
+        /// <param name="email">email address of the account</param>
+        /// <param name="pw">password for this account</param>
+        /// <returns>accoutn id</returns>
+        public int GetID(String email, String pw)
+        {
+            int id = 0;
+            MySqlConnection conn = new MySqlConnection(connStr);
+            MySqlCommand comm = new MySqlCommand(" SELECT ACCOUNT_ID FROM ACCOUNT WHERE EMAIL_ADDRESS = @EMAIL AND PASSWORD = SHA2(CONCAT(@PASSWORD, SALT), 256) ", conn);
+            comm.Parameters.AddWithValue("@EMAIL", email);
+            comm.Parameters.AddWithValue("@PASSWORD", pw);
+            try
+            {
+                conn.Open();
+                MySqlDataReader reader = comm.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    id = reader.GetInt32(0);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return id;
+        }
+
+        /// <summary>
+        /// Get the account info of the user
+        /// </summary>
+        /// <param name="email">email address of the account</param>
+        /// <param name="pw">password for this account</param>
+        /// <returns>Account object that contains the account basic info</returns>
+        public Account GetAccountInfo(int accountID)
+        {
+            Account account = new Account();
+
+            MySqlConnection conn = new MySqlConnection(connStr);
+            MySqlCommand comm = new MySqlCommand(" SELECT FIRST_NAME, LAST_NAME, EMAIL_ADDRESS " +
+                                                 " FROM ACCOUNT WHERE ACCOUNT_ID = @ACCOUNTID ", conn);
+            comm.Parameters.AddWithValue("@ACCOUNTID", accountID);
+            try
+            {
+                conn.Open();
+                MySqlDataReader reader = comm.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    account.firstName = reader.GetString("FIRST_NAME");
+                    account.lastName = reader.GetString("LAST_NAME");
+                    account.email = reader.GetString("EMAIL_ADDRESS");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            return account;
         }
 
         /// <summary>
