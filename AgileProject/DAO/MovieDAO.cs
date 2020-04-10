@@ -43,6 +43,20 @@ namespace AgileProject.DAO
         }
 
         /// <summary>
+        /// Search movies with a given input
+        /// </summary>
+        /// <param name="searchInput">user search input</param>
+        /// <returns>A list of Movie objects</returns>
+        public List<Movie> SearchMovies(String searchInput)
+        {
+            List<Movie> list = new List<Movie>();
+            MySqlCommand comm = new MySqlCommand("SELECT MOVIE_ID, MOVIE_NAME, GENRE, PURCHASE_PRICE FROM MOVIE WHERE MOVIE_NAME like @MOVIE_NAME");
+            comm.Parameters.AddWithValue("@MOVIE_NAME", "%" + searchInput + "%");
+            this.getMovieListData(ref comm, ref list);
+            return list;
+        }
+
+        /// <summary>
         /// Get all data of a movie
         /// </summary>
         /// <param name="movieID">ID String of a movie</param>
@@ -52,32 +66,35 @@ namespace AgileProject.DAO
             Movie m = new Movie();
 
             MySqlConnection conn = new MySqlConnection(connStr);
-            MySqlCommand comm = new MySqlCommand("SELECT * FROM MOIVE WHERE MOVIE_ID = @MOVIEID", conn);
+            MySqlCommand comm = new MySqlCommand(" SELECT MOVIE_ID, MOVIE_NAME, YEAR, MOVIE_LENGTH, GENRE, PURCHASE_PRICE, MOVIE_DESCRIPTION, ACTORS, PRODUCERS, DIRECTORS, WRITERS " +
+                                                 "FROM MOVIE WHERE MOVIE_ID = @MOVIEID");
             comm.Parameters.AddWithValue("@MOVIEID", movieID);
             
             try
             {
                 conn.Open();
+                comm.Connection = conn;
                 MySqlDataReader reader = comm.ExecuteReader();
 
-                while(reader.Read())
+                while (reader.Read())
                 {
-                    m.movieId = reader.GetString("movie_id");
-                    m.movieName = reader.GetString("movie_name");
-                    m.year = reader.GetInt16("year");
-                    m.movieLength = reader.GetInt16("movie_length");
-                    m.genre = reader.GetString("genre");
-                    m.purchasePrice = reader.GetDouble("purchase_price");
-                    m.movieDescription = reader.GetString("movie_description") ;
-                    m.actors = reader.IsDBNull(reader.GetOrdinal("actors")) ? "" : reader.GetString("actors") ;
-                    m.producers = reader.IsDBNull(reader.GetOrdinal("producers")) ? "" : reader.GetString("producers");
-                    m.directors = reader.IsDBNull(reader.GetOrdinal("directors")) ? "" : reader.GetString("directors");
-                    m.writers = reader.IsDBNull(reader.GetOrdinal("writers")) ? "" : reader.GetString("writers");
+                    m.movieId = reader.GetString("MOVIE_ID");
+                    m.movieName = reader.GetString("MOVIE_NAME");
+                    m.year = reader.GetInt16("YEAR");
+                    m.movieLength = reader.GetInt16("MOVIE_LENGTH");
+                    m.genre = reader.GetString("GENRE");
+                    m.purchasePrice = reader.GetDouble("PURCHASE_PRICE");
+                    m.movieDescription = reader.GetString("MOVIE_DESCRIPTION") ;
+                    m.actors = reader.IsDBNull(reader.GetOrdinal("ACTORS")) ? "" : reader.GetString("ACTORS") ;
+                    m.producers = reader.IsDBNull(reader.GetOrdinal("PRODUCERS")) ? "" : reader.GetString("PRODUCERS");
+                    m.directors = reader.IsDBNull(reader.GetOrdinal("DIRECTORS")) ? "" : reader.GetString("DIRECTORS");
+                    m.writers = reader.IsDBNull(reader.GetOrdinal("WRITERS")) ? "" : reader.GetString("WRITERS");
                 }
             }catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            conn.Close();
             return m;
         }
 
