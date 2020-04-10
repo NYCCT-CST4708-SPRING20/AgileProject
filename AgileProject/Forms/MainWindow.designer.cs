@@ -28,82 +28,245 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnHome = new System.Windows.Forms.Button();
-            this.cbbGenre = new System.Windows.Forms.ComboBox();
-            this.btnMyList = new System.Windows.Forms.Button();
             this.pnMovies = new System.Windows.Forms.Panel();
-            this.tbTestMessage = new System.Windows.Forms.TextBox();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.lblHome = new System.Windows.Forms.Label();
+            this.lblGenre = new System.Windows.Forms.Label();
+            this.lblMyList = new System.Windows.Forms.Label();
+            this.lbMyMovies = new System.Windows.Forms.Label();
+            this.pnGenre = new System.Windows.Forms.Panel();
+            this.lbSearchBoxUnderline = new System.Windows.Forms.Label();
+            this.lbSearch = new System.Windows.Forms.Label();
+            this.pbUserIcon = new System.Windows.Forms.PictureBox();
+            this.pnUserOptions = new System.Windows.Forms.Panel();
+            this.lbUserName = new System.Windows.Forms.Label();
+            this.lbSignOut = new System.Windows.Forms.Label();
+            this.lbUserSetting = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUserIcon)).BeginInit();
+            this.pnUserOptions.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnHome
-            // 
-            this.btnHome.Location = new System.Drawing.Point(12, 41);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(75, 23);
-            this.btnHome.TabIndex = 1;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // cbbGenre
-            // 
-            this.cbbGenre.FormattingEnabled = true;
-            this.cbbGenre.Location = new System.Drawing.Point(93, 43);
-            this.cbbGenre.Name = "cbbGenre";
-            this.cbbGenre.Size = new System.Drawing.Size(121, 21);
-            this.cbbGenre.TabIndex = 2;
-            this.cbbGenre.SelectedIndexChanged += new System.EventHandler(this.cbbGenre_SelectedIndexChanged);
-            this.cbbGenre.MouseHover += new System.EventHandler(this.cbbGenre_MouseHover);
-            // 
-            // btnMyList
-            // 
-            this.btnMyList.Location = new System.Drawing.Point(220, 43);
-            this.btnMyList.Name = "btnMyList";
-            this.btnMyList.Size = new System.Drawing.Size(75, 23);
-            this.btnMyList.TabIndex = 3;
-            this.btnMyList.Text = "My List";
-            this.btnMyList.UseVisualStyleBackColor = true;
-            this.btnMyList.Click += new System.EventHandler(this.btnMyList_Click);
             // 
             // pnMovies
             // 
             this.pnMovies.AutoScroll = true;
-            this.pnMovies.Location = new System.Drawing.Point(2, 70);
+            this.pnMovies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.pnMovies.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.pnMovies.Location = new System.Drawing.Point(0, 70);
             this.pnMovies.Name = "pnMovies";
-            this.pnMovies.Size = new System.Drawing.Size(1420, 698);
+            this.pnMovies.Size = new System.Drawing.Size(1424, 701);
             this.pnMovies.TabIndex = 4;
+            this.pnMovies.UseWaitCursor = true;
             // 
-            // tbTestMessage
+            // tbSearch
             // 
-            this.tbTestMessage.Location = new System.Drawing.Point(301, 44);
-            this.tbTestMessage.Name = "tbTestMessage";
-            this.tbTestMessage.Size = new System.Drawing.Size(1111, 20);
-            this.tbTestMessage.TabIndex = 5;
+            this.tbSearch.BackColor = System.Drawing.Color.Black;
+            this.tbSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
+            this.tbSearch.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.tbSearch.Location = new System.Drawing.Point(731, 23);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(250, 28);
+            this.tbSearch.TabIndex = 5;
+            this.tbSearch.TabStop = false;
+            this.tbSearch.Text = " Search a movie";
+            this.tbSearch.Click += new System.EventHandler(this.tbSearch_Click);
+            this.tbSearch.Enter += new System.EventHandler(this.tbSearch_Enter);
+            this.tbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSearch_KeyDown);
+            // 
+            // lblHome
+            // 
+            this.lblHome.AutoSize = true;
+            this.lblHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHome.ForeColor = System.Drawing.Color.White;
+            this.lblHome.Location = new System.Drawing.Point(220, 20);
+            this.lblHome.Name = "lblHome";
+            this.lblHome.Size = new System.Drawing.Size(86, 31);
+            this.lblHome.TabIndex = 8;
+            this.lblHome.Text = "Home";
+            this.lblHome.Click += new System.EventHandler(this.lblHome_Click);
+            // 
+            // lblGenre
+            // 
+            this.lblGenre.AutoSize = true;
+            this.lblGenre.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenre.ForeColor = System.Drawing.Color.White;
+            this.lblGenre.Location = new System.Drawing.Point(330, 20);
+            this.lblGenre.Name = "lblGenre";
+            this.lblGenre.Size = new System.Drawing.Size(89, 31);
+            this.lblGenre.TabIndex = 9;
+            this.lblGenre.Text = "Genre";
+            this.lblGenre.Click += new System.EventHandler(this.lblGenre_Click);
+            // 
+            // lblMyList
+            // 
+            this.lblMyList.AutoSize = true;
+            this.lblMyList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMyList.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMyList.ForeColor = System.Drawing.Color.White;
+            this.lblMyList.Location = new System.Drawing.Point(440, 20);
+            this.lblMyList.Name = "lblMyList";
+            this.lblMyList.Size = new System.Drawing.Size(108, 31);
+            this.lblMyList.TabIndex = 10;
+            this.lblMyList.Text = "Wishlist";
+            this.lblMyList.Click += new System.EventHandler(this.lblMyList_Click);
+            // 
+            // lbMyMovies
+            // 
+            this.lbMyMovies.AutoSize = true;
+            this.lbMyMovies.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbMyMovies.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMyMovies.ForeColor = System.Drawing.Color.White;
+            this.lbMyMovies.Location = new System.Drawing.Point(566, 20);
+            this.lbMyMovies.Name = "lbMyMovies";
+            this.lbMyMovies.Size = new System.Drawing.Size(143, 31);
+            this.lbMyMovies.TabIndex = 11;
+            this.lbMyMovies.Text = "My Movies";
+            this.lbMyMovies.Click += new System.EventHandler(this.lbMyMovies_Click);
+            // 
+            // pnGenre
+            // 
+            this.pnGenre.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pnGenre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnGenre.Location = new System.Drawing.Point(330, 61);
+            this.pnGenre.Name = "pnGenre";
+            this.pnGenre.Size = new System.Drawing.Size(120, 0);
+            this.pnGenre.TabIndex = 12;
+            this.pnGenre.Visible = false;
+            // 
+            // lbSearchBoxUnderline
+            // 
+            this.lbSearchBoxUnderline.BackColor = System.Drawing.Color.White;
+            this.lbSearchBoxUnderline.ForeColor = System.Drawing.Color.White;
+            this.lbSearchBoxUnderline.Location = new System.Drawing.Point(731, 54);
+            this.lbSearchBoxUnderline.Name = "lbSearchBoxUnderline";
+            this.lbSearchBoxUnderline.Size = new System.Drawing.Size(250, 1);
+            this.lbSearchBoxUnderline.TabIndex = 13;
+            // 
+            // lbSearch
+            // 
+            this.lbSearch.AutoSize = true;
+            this.lbSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
+            this.lbSearch.ForeColor = System.Drawing.Color.White;
+            this.lbSearch.Location = new System.Drawing.Point(987, 22);
+            this.lbSearch.Name = "lbSearch";
+            this.lbSearch.Size = new System.Drawing.Size(93, 29);
+            this.lbSearch.TabIndex = 14;
+            this.lbSearch.Text = "Search";
+            this.lbSearch.Click += new System.EventHandler(this.lbSearch_Click);
+            this.lbSearch.MouseLeave += new System.EventHandler(this.lbSearch_MouseLeave);
+            this.lbSearch.MouseHover += new System.EventHandler(this.lbSearch_MouseHover);
+            // 
+            // pbUserIcon
+            // 
+            this.pbUserIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbUserIcon.Image = global::AgileProject.Properties.Resources.UserIcon;
+            this.pbUserIcon.Location = new System.Drawing.Point(1367, 17);
+            this.pbUserIcon.Name = "pbUserIcon";
+            this.pbUserIcon.Size = new System.Drawing.Size(36, 36);
+            this.pbUserIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbUserIcon.TabIndex = 15;
+            this.pbUserIcon.TabStop = false;
+            this.pbUserIcon.Click += new System.EventHandler(this.pbUserIcon_Click);
+            // 
+            // pnUserOptions
+            // 
+            this.pnUserOptions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnUserOptions.Controls.Add(this.lbUserName);
+            this.pnUserOptions.Controls.Add(this.lbSignOut);
+            this.pnUserOptions.Controls.Add(this.lbUserSetting);
+            this.pnUserOptions.Location = new System.Drawing.Point(1206, 59);
+            this.pnUserOptions.Name = "pnUserOptions";
+            this.pnUserOptions.Size = new System.Drawing.Size(200, 90);
+            this.pnUserOptions.TabIndex = 16;
+            this.pnUserOptions.Visible = false;
+            // 
+            // lbUserName
+            // 
+            this.lbUserName.BackColor = System.Drawing.Color.DimGray;
+            this.lbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbUserName.ForeColor = System.Drawing.Color.White;
+            this.lbUserName.Location = new System.Drawing.Point(0, 0);
+            this.lbUserName.Name = "lbUserName";
+            this.lbUserName.Size = new System.Drawing.Size(200, 30);
+            this.lbUserName.TabIndex = 2;
+            this.lbUserName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSignOut
+            // 
+            this.lbSignOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbSignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbSignOut.ForeColor = System.Drawing.Color.White;
+            this.lbSignOut.Location = new System.Drawing.Point(0, 60);
+            this.lbSignOut.Name = "lbSignOut";
+            this.lbSignOut.Size = new System.Drawing.Size(200, 30);
+            this.lbSignOut.TabIndex = 1;
+            this.lbSignOut.Text = "Sign Out";
+            this.lbSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbSignOut.Click += new System.EventHandler(this.lbSignOut_Click);
+            this.lbSignOut.MouseLeave += new System.EventHandler(this.lbSignOut_MouseLeave);
+            this.lbSignOut.MouseHover += new System.EventHandler(this.lbSignOut_MouseHover);
+            // 
+            // lbUserSetting
+            // 
+            this.lbUserSetting.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbUserSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbUserSetting.ForeColor = System.Drawing.Color.White;
+            this.lbUserSetting.Location = new System.Drawing.Point(0, 30);
+            this.lbUserSetting.Name = "lbUserSetting";
+            this.lbUserSetting.Size = new System.Drawing.Size(200, 30);
+            this.lbUserSetting.TabIndex = 0;
+            this.lbUserSetting.Text = "User Setting";
+            this.lbUserSetting.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbUserSetting.Click += new System.EventHandler(this.lbUserSetting_Click);
+            this.lbUserSetting.MouseLeave += new System.EventHandler(this.lbUserSetting_MouseLeave);
+            this.lbUserSetting.MouseHover += new System.EventHandler(this.lbUserSetting_MouseHover);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlText;
             this.ClientSize = new System.Drawing.Size(1424, 771);
-            this.Controls.Add(this.tbTestMessage);
+            this.Controls.Add(this.pnUserOptions);
+            this.Controls.Add(this.pbUserIcon);
+            this.Controls.Add(this.lbSearch);
+            this.Controls.Add(this.lbSearchBoxUnderline);
+            this.Controls.Add(this.pnGenre);
+            this.Controls.Add(this.lbMyMovies);
+            this.Controls.Add(this.lblMyList);
+            this.Controls.Add(this.lblGenre);
+            this.Controls.Add(this.lblHome);
+            this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.pnMovies);
-            this.Controls.Add(this.btnMyList);
-            this.Controls.Add(this.cbbGenre);
-            this.Controls.Add(this.btnHome);
+            this.MaximizeBox = false;
             this.Name = "MainWindow";
-            this.Text = "Form1";
+            this.Text = "MainWindow";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbUserIcon)).EndInit();
+            this.pnUserOptions.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.ComboBox cbbGenre;
-        private System.Windows.Forms.Button btnMyList;
         private System.Windows.Forms.Panel pnMovies;
-        private System.Windows.Forms.TextBox tbTestMessage;
+        private System.Windows.Forms.TextBox tbSearch;
+        private System.Windows.Forms.Label lblHome;
+        private System.Windows.Forms.Label lblGenre;
+        private System.Windows.Forms.Label lblMyList;
+        private System.Windows.Forms.Label lbMyMovies;
+        private System.Windows.Forms.Panel pnGenre;
+        private System.Windows.Forms.Label lbSearchBoxUnderline;
+        private System.Windows.Forms.Label lbSearch;
+        private System.Windows.Forms.PictureBox pbUserIcon;
+        private System.Windows.Forms.Panel pnUserOptions;
+        private System.Windows.Forms.Label lbSignOut;
+        private System.Windows.Forms.Label lbUserSetting;
+        private System.Windows.Forms.Label lbUserName;
     }
 }
 
