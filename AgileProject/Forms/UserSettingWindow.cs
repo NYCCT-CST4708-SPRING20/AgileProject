@@ -8,17 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using AgileProject.DAO;
+using AgileProject.Models;
 
 namespace AgileProject.Forms
 {
     public partial class UserSettingWindow : Form
     {
-        private int userId = 1;
-        public object ConfigurationManager { get; private set; }
+        private int accountId;
+        private Account oldAccount;
 
-
-        public UserSettingWindow()
+        public UserSettingWindow(int accountId)
         {
+            this.accountId = accountId;
             InitializeComponent();
         }
 
@@ -34,46 +36,82 @@ namespace AgileProject.Forms
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            SqlConnection myconn;
-            myconn = new SqlConnection();
-            myconn.ConnectionString = "Data Source=(localdb)\\ProjectsV13;Initial Catalog=user;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            myconn.Open();
-
-            SqlCommand mycmd = new SqlCommand("Select * from dbo.account where id = 1", myconn);
-            SqlDataReader sqlDataReader = mycmd.ExecuteReader();
-
-            while (sqlDataReader.Read())
-            {
-                textBoxFname.Text = sqlDataReader.GetString(1);
-                textBoxLname.Text = sqlDataReader.GetString(2);
-                textBoxEmail.Text = sqlDataReader.GetString(3);
-
-            }
+            UserDAO userDAO = new UserDAO();
+            Account account = userDAO.GetAccountInfo(accountId);
+            oldAccount = account;
+            textBoxFname.Text = account.firstName;
+            textBoxLname.Text = account.lastName;
+            textBoxEmail.Text = account.email;
         }
 
         private void textOldpassword_Leave(object sender, EventArgs e)
         {
-        
+
         }
 
-        private void changePw_Click(object sender, EventArgs e)
+        private void saveChanges(object sender, EventArgs e)
         {
-            
-                SqlConnection myconn = new SqlConnection("Data Source=(localdb)\\ProjectsV13;Initial Catalog=user;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            UserDAO userDAO = new UserDAO();
+            Account account = userDAO.GetAccountInfo(accountId);
 
-                if(!String.IsNullOrEmpty(textNewpassword.Text) && textNewpassword.Text == confrimPassword.Text)
+            if (userDAO.Authentication(account.email, textBoxOldPassword.Text))
+            {
+                if (textBoxFname.Text != account.firstName)
                 {
-                    myconn.Open();
-                    SqlCommand mycmd = new SqlCommand("UPDATE dbo.account SET password = '" + confrimPassword.Text + "' WHERE id = 1", myconn);
-                    mycmd.ExecuteNonQuery();
-                    myconn.Close();
-                    MessageBox.Show("Password Changed. ");
+                    userDAO.UpdateUserInfo(UserInfoKey.FIRST_NAME, textBoxFname.Text, accountId);
                 }
-                else
+
+                if(textBoxLname.Text != account.lastName)
                 {
-                    MessageBox.Show("Check your New Password and confrim Password");
+                    userDAO.UpdateUserInfo(UserInfoKey.LAST_NAME, textBoxLname.Text, accountId);
                 }
+
+                if(textBoxEmail.Text != account.email)
+                {
+                    userDAO.UpdateUserInfo(UserInfoKey.EMAIL_ADDRESS, textBoxEmail.Text, accountId);
+                }
+
+                if(textNewpassword.Text != "" || confrimPassword.Text != "")
+                {
+                    if(textNewpassword.Text == confrimPassword.Text)
+                    {
+                        userDAO.UpdateUserInfo(UserInfoKey.PASSWORD, textNewpassword.Text, accountId);
+                    }
+                    else
+                    {
+                        MessageBox.Show("New passwords do not match. ");
+                    }
+                }
+             
             }
+            else
+            {
+                MessageBox.Show("Incorrect old password. ");
+            }
+            MessageBox.Show("All changes updated. ");
+            textBoxOldPassword.Text = "";
+            textNewpassword.Text = "";
+            confrimPassword.Text = "";
+        }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxFname_TextChanged(object sender, EventArgs e)
+        {
+            oldAccount.firstName = textBoxFname.Text;
+        }
+
+        private void textBoxLname_TextChanged(object sender, EventArgs e)
+        {
+            oldAccount.lastName = textBoxLname.Text;
+        }
+
+        private void textBoxEmail_TextChanged(object sender, EventArgs e)
+        {
+            oldAccount.email = textBoxEmail.Text;
         }
     }
+}
