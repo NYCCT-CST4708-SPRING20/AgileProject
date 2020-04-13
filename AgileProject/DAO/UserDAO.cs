@@ -155,7 +155,7 @@ namespace AgileProject.DAO
         /// <param name="key">User info key</param>
         /// <param name="str">User information that needs to be updated</param>
         /// <param name="accountID">account id of the user</param>
-        public void UpdateUserInfo(UserInfoKey key, String str, String accountID)
+        public void UpdateUserInfo(UserInfoKey key, String str, int accountID)
         {
             MySqlConnection conn = new MySqlConnection(connStr);
             MySqlCommand comm = new MySqlCommand();
