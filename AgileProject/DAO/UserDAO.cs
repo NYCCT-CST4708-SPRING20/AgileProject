@@ -130,7 +130,7 @@ namespace AgileProject.DAO
         {
             MySqlConnection conn = new MySqlConnection(connStr);
             MySqlCommand comm = new MySqlCommand(" INSERT INTO ACCOUNT (FIRST_NAME, LAST_NAME, EMAIL_ADDRESS, PASSWORD, SALT) "
-                                               + " VALUES (@FNAME, @LNAME, @EMAIL, SHA2(CONCAT(@PASSWORD, @SALT)), @SALT) ", conn);
+                                               + " VALUES (@FNAME, @LNAME, @EMAIL, SHA2(CONCAT(@PASSWORD, @SALT), 256), @SALT) ", conn);
             comm.Parameters.AddWithValue("@FNAME", firstName);
             comm.Parameters.AddWithValue("@LNAME", lastName);
             comm.Parameters.AddWithValue("@EMAIL", email);
@@ -154,16 +154,18 @@ namespace AgileProject.DAO
         /// </summary>
         /// <param name="key">User info key</param>
         /// <param name="str">User information that needs to be updated</param>
-        public void UpdateUserInfo(UserInfoKey key, String str)
+        /// <param name="accountID">account id of the user</param>
+        public void UpdateUserInfo(UserInfoKey key, String str, String accountID)
         {
             MySqlConnection conn = new MySqlConnection(connStr);
             MySqlCommand comm = new MySqlCommand();
             comm.Connection = conn;
             String keyString = key.ToString();
             comm.CommandText = key != UserInfoKey.PASSWORD ?
-                            "UPDATE ACCOUNT SET " + keyString + " = @" + keyString :
-                            "UPDATE ACCOUNT SET " + keyString + " = SHA2(CONCAT(@" + keyString + ", SALT), SALT)";
+                            "UPDATE ACCOUNT SET " + keyString + " = @" + keyString + " WHERE ACCOUNT_ID = @ACCOUNTID":
+                            "UPDATE ACCOUNT SET " + keyString + " = SHA2(CONCAT(@" + keyString + ", SALT), 256) WHERE ACCOUNT_ID = @ACCOUNTID";
             comm.Parameters.AddWithValue("@" + keyString, str);
+            comm.Parameters.AddWithValue("@ACCOUNTID", accountID);
 
             try
             {
