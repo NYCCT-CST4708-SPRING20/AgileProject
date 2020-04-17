@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using AgileProject.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,7 @@ namespace AgileProject.Forms
         MySqlConnection mySqlConn = new MySqlConnection(connStr);
         public BillingFormWindow()
         {
-            //Testing github 
+           
             InitializeComponent();
         }
 
@@ -60,12 +61,19 @@ namespace AgileProject.Forms
         {
             try
             {
-                mySqlConn.Open();
-                String query = "INSERT INTO test.transactions " +
-                    "(transaction_id, account_id, movie_id, tran_date, cc_number, cc_exp_date, cc_name, street_1, street_2, city, state, postal_code) " +
-                    "VALUES('456', 1, '2V2cCYJII6', '2020-03-07', '123456789', '2020-03-07', 'Elias Luna', '999 Street', 'Allen Road', 'Bronx', 'NY', 10463)";
-                MySqlCommand mySqlCommand = new MySqlCommand(query, mySqlConn);
-                mySqlCommand.ExecuteNonQuery();
+                Order orderDao = new Order();
+                orderDao.NewOrder(
+                    456, 
+                    "2V2cCYJII6", 
+                    Int32.Parse(creditCardNum.Text),
+                    Int32.Parse(ccMonth.Text + "-" + ccDay.Text + "-" + ccYear.Text),
+                    firstName.Text + " " + lastName.Text,
+                    addressLine1.Text,
+                    addressLine2.Text,
+                    city.Text,
+                    state.Text,
+                    Int32.Parse(zipCode.Text));
+       
                 MessageBox.Show("Data added to DB");
 
             }
@@ -74,7 +82,7 @@ namespace AgileProject.Forms
             {
                 Console.WriteLine(ex.Message);
             }
-            mySqlConn.Close();
+        
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -83,6 +91,11 @@ namespace AgileProject.Forms
         }
 
         private void textBox2_TextChanged_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
         {
 
         }

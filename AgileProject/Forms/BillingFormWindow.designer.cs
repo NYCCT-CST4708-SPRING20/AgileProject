@@ -39,8 +39,8 @@
             this.zipCode = new System.Windows.Forms.TextBox();
             this.paymentMethod = new System.Windows.Forms.Label();
             this.creditCardNum = new System.Windows.Forms.TextBox();
-            this.creditCardDateMonth = new System.Windows.Forms.TextBox();
-            this.securityCode = new System.Windows.Forms.TextBox();
+            this.ccMonth = new System.Windows.Forms.TextBox();
+            this.ccYear = new System.Windows.Forms.TextBox();
             this.cancel = new System.Windows.Forms.Button();
             this.purchase = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,18 +54,20 @@
             this.label9 = new System.Windows.Forms.Label();
             this.city = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.creditCardDateYear = new System.Windows.Forms.TextBox();
+            this.ccDay = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // billingInfo
             // 
             this.billingInfo.BackColor = System.Drawing.SystemColors.ControlDark;
             this.billingInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.billingInfo.Location = new System.Drawing.Point(17, 15);
-            this.billingInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.billingInfo.Location = new System.Drawing.Point(23, 18);
             this.billingInfo.Name = "billingInfo";
             this.billingInfo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.billingInfo.Size = new System.Drawing.Size(265, 38);
+            this.billingInfo.Size = new System.Drawing.Size(353, 47);
             this.billingInfo.TabIndex = 0;
             this.billingInfo.Text = "Billing Information";
             this.billingInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -77,10 +79,9 @@
             // 
             this.name.BackColor = System.Drawing.SystemColors.ControlDark;
             this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.name.Location = new System.Drawing.Point(17, 69);
-            this.name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.name.Location = new System.Drawing.Point(23, 85);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(191, 36);
+            this.name.Size = new System.Drawing.Size(255, 44);
             this.name.TabIndex = 1;
             this.name.Text = "Name";
             this.name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -92,10 +93,9 @@
             // 
             this.billingAddress.BackColor = System.Drawing.SystemColors.ControlDark;
             this.billingAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.billingAddress.Location = new System.Drawing.Point(17, 162);
-            this.billingAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.billingAddress.Location = new System.Drawing.Point(23, 199);
             this.billingAddress.Name = "billingAddress";
-            this.billingAddress.Size = new System.Drawing.Size(191, 42);
+            this.billingAddress.Size = new System.Drawing.Size(255, 52);
             this.billingAddress.TabIndex = 1;
             this.billingAddress.Text = "Billing Address";
             this.billingAddress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -105,53 +105,53 @@
             // 
             // firstName
             // 
-            this.firstName.Location = new System.Drawing.Point(20, 123);
-            this.firstName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.firstName.Location = new System.Drawing.Point(27, 151);
+            this.firstName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.firstName.Name = "firstName";
-            this.firstName.Size = new System.Drawing.Size(76, 20);
+            this.firstName.Size = new System.Drawing.Size(100, 22);
             this.firstName.TabIndex = 2;
             this.firstName.TextChanged += new System.EventHandler(this.firstName_TextChanged);
             // 
             // lastName
             // 
-            this.lastName.Location = new System.Drawing.Point(134, 123);
-            this.lastName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lastName.Location = new System.Drawing.Point(179, 151);
+            this.lastName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lastName.Name = "lastName";
-            this.lastName.Size = new System.Drawing.Size(76, 20);
+            this.lastName.Size = new System.Drawing.Size(100, 22);
             this.lastName.TabIndex = 2;
             this.lastName.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // addressLine1
             // 
-            this.addressLine1.Location = new System.Drawing.Point(20, 228);
-            this.addressLine1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addressLine1.Location = new System.Drawing.Point(27, 281);
+            this.addressLine1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addressLine1.Name = "addressLine1";
-            this.addressLine1.Size = new System.Drawing.Size(190, 20);
+            this.addressLine1.Size = new System.Drawing.Size(252, 22);
             this.addressLine1.TabIndex = 2;
             // 
             // addressLine2
             // 
-            this.addressLine2.Location = new System.Drawing.Point(20, 266);
-            this.addressLine2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addressLine2.Location = new System.Drawing.Point(27, 327);
+            this.addressLine2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addressLine2.Name = "addressLine2";
-            this.addressLine2.Size = new System.Drawing.Size(190, 20);
+            this.addressLine2.Size = new System.Drawing.Size(252, 22);
             this.addressLine2.TabIndex = 2;
             this.addressLine2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // state
             // 
-            this.state.Location = new System.Drawing.Point(20, 306);
-            this.state.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.state.Location = new System.Drawing.Point(27, 377);
+            this.state.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.state.Name = "state";
-            this.state.Size = new System.Drawing.Size(76, 20);
+            this.state.Size = new System.Drawing.Size(100, 22);
             this.state.TabIndex = 2;
             // 
             // zipCode
             // 
-            this.zipCode.Location = new System.Drawing.Point(20, 357);
-            this.zipCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.zipCode.Location = new System.Drawing.Point(27, 439);
+            this.zipCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.zipCode.Name = "zipCode";
-            this.zipCode.Size = new System.Drawing.Size(76, 20);
+            this.zipCode.Size = new System.Drawing.Size(100, 22);
             this.zipCode.TabIndex = 2;
             this.zipCode.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -159,10 +159,9 @@
             // 
             this.paymentMethod.BackColor = System.Drawing.SystemColors.ControlDark;
             this.paymentMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.paymentMethod.Location = new System.Drawing.Point(382, 162);
-            this.paymentMethod.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.paymentMethod.Location = new System.Drawing.Point(509, 199);
             this.paymentMethod.Name = "paymentMethod";
-            this.paymentMethod.Size = new System.Drawing.Size(191, 42);
+            this.paymentMethod.Size = new System.Drawing.Size(255, 52);
             this.paymentMethod.TabIndex = 1;
             this.paymentMethod.Text = "Payment Method";
             this.paymentMethod.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -172,36 +171,36 @@
             // 
             // creditCardNum
             // 
-            this.creditCardNum.Location = new System.Drawing.Point(382, 228);
-            this.creditCardNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.creditCardNum.Location = new System.Drawing.Point(509, 281);
+            this.creditCardNum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.creditCardNum.Name = "creditCardNum";
-            this.creditCardNum.Size = new System.Drawing.Size(190, 20);
+            this.creditCardNum.Size = new System.Drawing.Size(252, 22);
             this.creditCardNum.TabIndex = 2;
             // 
-            // creditCardDateMonth
+            // ccMonth
             // 
-            this.creditCardDateMonth.Location = new System.Drawing.Point(382, 266);
-            this.creditCardDateMonth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.creditCardDateMonth.Name = "creditCardDateMonth";
-            this.creditCardDateMonth.Size = new System.Drawing.Size(33, 20);
-            this.creditCardDateMonth.TabIndex = 2;
+            this.ccMonth.Location = new System.Drawing.Point(537, 327);
+            this.ccMonth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ccMonth.Name = "ccMonth";
+            this.ccMonth.Size = new System.Drawing.Size(60, 22);
+            this.ccMonth.TabIndex = 2;
             // 
-            // securityCode
+            // ccYear
             // 
-            this.securityCode.Location = new System.Drawing.Point(496, 266);
-            this.securityCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.securityCode.Name = "securityCode";
-            this.securityCode.Size = new System.Drawing.Size(76, 20);
-            this.securityCode.TabIndex = 2;
+            this.ccYear.Location = new System.Drawing.Point(663, 327);
+            this.ccYear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ccYear.Name = "ccYear";
+            this.ccYear.Size = new System.Drawing.Size(78, 22);
+            this.ccYear.TabIndex = 2;
             // 
             // cancel
             // 
             this.cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.cancel.ForeColor = System.Drawing.Color.Black;
-            this.cancel.Location = new System.Drawing.Point(382, 344);
-            this.cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cancel.Location = new System.Drawing.Point(509, 423);
+            this.cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(105, 33);
+            this.cancel.Size = new System.Drawing.Size(140, 41);
             this.cancel.TabIndex = 3;
             this.cancel.Text = "Cancel";
             this.cancel.UseVisualStyleBackColor = true;
@@ -211,10 +210,10 @@
             this.purchase.BackColor = System.Drawing.Color.SeaGreen;
             this.purchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.purchase.ForeColor = System.Drawing.SystemColors.Control;
-            this.purchase.Location = new System.Drawing.Point(496, 344);
-            this.purchase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.purchase.Location = new System.Drawing.Point(661, 423);
+            this.purchase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.purchase.Name = "purchase";
-            this.purchase.Size = new System.Drawing.Size(87, 33);
+            this.purchase.Size = new System.Drawing.Size(116, 41);
             this.purchase.TabIndex = 3;
             this.purchase.Text = "Buy";
             this.purchase.UseVisualStyleBackColor = false;
@@ -224,10 +223,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(29, 105);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(39, 129);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 17);
+            this.label1.Size = new System.Drawing.Size(38, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "first";
             // 
@@ -235,10 +233,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(143, 105);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(191, 129);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 17);
+            this.label2.Size = new System.Drawing.Size(36, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "last";
             // 
@@ -246,10 +243,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(29, 209);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(39, 257);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 17);
+            this.label3.Size = new System.Drawing.Size(71, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Address";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -258,10 +254,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(29, 248);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(39, 305);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 17);
+            this.label4.Size = new System.Drawing.Size(85, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Address 2";
             this.label4.Click += new System.EventHandler(this.label3_Click);
@@ -270,10 +265,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(26, 338);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(35, 416);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 17);
+            this.label5.Size = new System.Drawing.Size(75, 20);
             this.label5.TabIndex = 4;
             this.label5.Text = "Zip Code";
             this.label5.Click += new System.EventHandler(this.label3_Click);
@@ -282,10 +276,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label6.Location = new System.Drawing.Point(29, 289);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(39, 356);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 17);
+            this.label6.Size = new System.Drawing.Size(48, 20);
             this.label6.TabIndex = 4;
             this.label6.Text = "State";
             this.label6.Click += new System.EventHandler(this.label3_Click);
@@ -294,10 +287,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.Location = new System.Drawing.Point(388, 209);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(517, 257);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(133, 17);
+            this.label7.Size = new System.Drawing.Size(159, 20);
             this.label7.TabIndex = 4;
             this.label7.Text = "Credit Card Number";
             // 
@@ -305,58 +297,89 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(386, 248);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(548, 305);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 17);
+            this.label8.Size = new System.Drawing.Size(124, 20);
             this.label8.TabIndex = 4;
-            this.label8.Text = "Expiry Date";
+            this.label8.Text = "Expiration Date";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(494, 248);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(659, 305);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(96, 17);
+            this.label9.Size = new System.Drawing.Size(0, 20);
             this.label9.TabIndex = 4;
-            this.label9.Text = "Security Code";
             // 
             // city
             // 
-            this.city.Location = new System.Drawing.Point(132, 306);
-            this.city.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.city.Location = new System.Drawing.Point(176, 377);
+            this.city.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.city.Name = "city";
-            this.city.Size = new System.Drawing.Size(76, 20);
+            this.city.Size = new System.Drawing.Size(100, 22);
             this.city.TabIndex = 2;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(142, 288);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(189, 354);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(31, 17);
+            this.label10.Size = new System.Drawing.Size(38, 20);
             this.label10.TabIndex = 4;
             this.label10.Text = "City";
             this.label10.Click += new System.EventHandler(this.label3_Click);
             // 
-            // creditCardDateYear
+            // ccDay
             // 
-            this.creditCardDateYear.Location = new System.Drawing.Point(419, 266);
-            this.creditCardDateYear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.creditCardDateYear.Name = "creditCardDateYear";
-            this.creditCardDateYear.Size = new System.Drawing.Size(53, 20);
-            this.creditCardDateYear.TabIndex = 2;
+            this.ccDay.Location = new System.Drawing.Point(603, 327);
+            this.ccDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ccDay.Name = "ccDay";
+            this.ccDay.Size = new System.Drawing.Size(54, 22);
+            this.ccDay.TabIndex = 2;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label11.Location = new System.Drawing.Point(548, 356);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(37, 20);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "MM";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label12.Location = new System.Drawing.Point(614, 356);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 20);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "DD";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label13.Location = new System.Drawing.Point(679, 356);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(49, 20);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "YYYY";
+            this.label13.Click += new System.EventHandler(this.label12_Click);
             // 
             // BillingFormWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 449);
+            this.ClientSize = new System.Drawing.Size(800, 553);
             this.Controls.Add(this.label9);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label2);
@@ -369,10 +392,10 @@
             this.Controls.Add(this.purchase);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.lastName);
-            this.Controls.Add(this.securityCode);
+            this.Controls.Add(this.ccYear);
             this.Controls.Add(this.zipCode);
-            this.Controls.Add(this.creditCardDateYear);
-            this.Controls.Add(this.creditCardDateMonth);
+            this.Controls.Add(this.ccDay);
+            this.Controls.Add(this.ccMonth);
             this.Controls.Add(this.city);
             this.Controls.Add(this.state);
             this.Controls.Add(this.addressLine2);
@@ -384,7 +407,7 @@
             this.Controls.Add(this.name);
             this.Controls.Add(this.billingInfo);
             this.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BillingFormWindow";
             this.Text = "Billing Form";
             this.Load += new System.EventHandler(this.billingForm_Load);
@@ -406,8 +429,8 @@
         private System.Windows.Forms.TextBox zipCode;
         private System.Windows.Forms.Label paymentMethod;
         private System.Windows.Forms.TextBox creditCardNum;
-        private System.Windows.Forms.TextBox creditCardDateMonth;
-        private System.Windows.Forms.TextBox securityCode;
+        private System.Windows.Forms.TextBox ccMonth;
+        private System.Windows.Forms.TextBox ccYear;
         private System.Windows.Forms.Button cancel;
         private System.Windows.Forms.Button purchase;
         private System.Windows.Forms.Label label1;
@@ -421,7 +444,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox city;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox creditCardDateYear;
+        private System.Windows.Forms.TextBox ccDay;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
 
