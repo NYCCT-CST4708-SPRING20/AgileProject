@@ -14,11 +14,12 @@ namespace AgileProject.Forms
 {
     public partial class BillingFormWindow : Form
     {
-        const string connStr = "";
-        MySqlConnection mySqlConn = new MySqlConnection(connStr);
-        public BillingFormWindow()
+        private readonly String movieId;
+        private readonly int accountId;
+        public BillingFormWindow(String movieId, int accountId)
         {
-           
+            this.movieId = movieId;
+            this.accountId = accountId;
             InitializeComponent();
         }
 
@@ -59,12 +60,10 @@ namespace AgileProject.Forms
 
         private void purchase_Click(object sender, EventArgs e)
         {
-            try
-            {
                 Order orderDao = new Order();
                 orderDao.NewOrder(
-                    456, 
-                    "2V2cCYJII6", 
+                    accountId, 
+                    movieId, 
                     Int32.Parse(creditCardNum.Text),
                     Int32.Parse(ccMonth.Text + "-" + ccDay.Text + "-" + ccYear.Text),
                     firstName.Text + " " + lastName.Text,
@@ -75,13 +74,6 @@ namespace AgileProject.Forms
                     Int32.Parse(zipCode.Text));
        
                 MessageBox.Show("Data added to DB");
-
-            }
-
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
         
         }
 
