@@ -30,83 +30,85 @@ namespace AgileProject.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lbMessage1 = new System.Windows.Forms.Label();
+            this.lbMessage2 = new System.Windows.Forms.Label();
+            this.gbEmail = new System.Windows.Forms.GroupBox();
+            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.gbEmail.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtEmail
+            // lbMessage1
             // 
-            this.txtEmail.Location = new System.Drawing.Point(32, 58);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
-            this.txtEmail.Multiline = true;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(171, 34);
-            this.txtEmail.TabIndex = 0;
-            this.txtEmail.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.lbMessage1.AutoSize = true;
+            this.lbMessage1.Location = new System.Drawing.Point(51, 32);
+            this.lbMessage1.Name = "lbMessage1";
+            this.lbMessage1.Size = new System.Drawing.Size(259, 13);
+            this.lbMessage1.TabIndex = 0;
+            this.lbMessage1.Text = "Enter your the email address that you used to register.";
             // 
-            // groupBox1
+            // lbMessage2
             // 
-            this.groupBox1.Controls.Add(this.txtEmail);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(260, 73);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(222, 166);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Verify Email";
+            this.lbMessage2.AutoSize = true;
+            this.lbMessage2.Location = new System.Drawing.Point(41, 45);
+            this.lbMessage2.Name = "lbMessage2";
+            this.lbMessage2.Size = new System.Drawing.Size(280, 13);
+            this.lbMessage2.TabIndex = 1;
+            this.lbMessage2.Text = "We\'ll send you an email with a link to reset your password.";
             // 
-            // button1
+            // gbEmail
             // 
-            this.button1.Image = global::AgileProject.Properties.Resources.Sent_icon;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(114, 115);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 31);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Send Email";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.gbEmail.Controls.Add(this.tbEmail);
+            this.gbEmail.Location = new System.Drawing.Point(41, 70);
+            this.gbEmail.Name = "gbEmail";
+            this.gbEmail.Size = new System.Drawing.Size(280, 51);
+            this.gbEmail.TabIndex = 2;
+            this.gbEmail.TabStop = false;
+            this.gbEmail.Text = "Email Address";
             // 
-            // pictureBox1
+            // tbEmail
             // 
-            this.pictureBox1.Image = global::AgileProject.Properties.Resources.Email_Reply_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(58, 82);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(154, 137);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.tbEmail.Location = new System.Drawing.Point(10, 20);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(256, 20);
+            this.tbEmail.TabIndex = 0;
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(234, 128);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(75, 23);
+            this.btnSend.TabIndex = 3;
+            this.btnSend.Text = "SEND";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // ForgotPasswordWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 378);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(374, 184);
+            this.Controls.Add(this.btnSend);
+            this.Controls.Add(this.gbEmail);
+            this.Controls.Add(this.lbMessage2);
+            this.Controls.Add(this.lbMessage1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ForgotPasswordWindow";
             this.Text = "Forgot Password";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.ForgotPasswordWindow_Load);
+            this.gbEmail.ResumeLayout(false);
+            this.gbEmail.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbMessage1;
+        private System.Windows.Forms.Label lbMessage2;
+        private System.Windows.Forms.GroupBox gbEmail;
+        private System.Windows.Forms.TextBox tbEmail;
+        private System.Windows.Forms.Button btnSend;
     }
 }
