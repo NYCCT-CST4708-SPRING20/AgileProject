@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using AgileProject.DAO;
 
 namespace AgileProject.Forms
 {
@@ -18,37 +19,43 @@ namespace AgileProject.Forms
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void LoginWindow_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
+            lblSignUp.MouseEnter += (s, args) => lblSignUp.Font = new Font(lblSignUp.Font.Name, lblSignUp.Font.SizeInPoints, FontStyle.Underline);
+            lblSignUp.MouseLeave += (s, args) => lblSignUp.Font = new Font(lblSignUp.Font.Name, lblSignUp.Font.SizeInPoints, FontStyle.Regular);
+            lblForgotPw.MouseEnter += (s, args) => lblForgotPw.Font = new Font(lblForgotPw.Font.Name, lblForgotPw.Font.SizeInPoints, FontStyle.Underline);
+            lblForgotPw.MouseLeave += (s, args) => lblForgotPw.Font = new Font(lblForgotPw.Font.Name, lblForgotPw.Font.SizeInPoints, FontStyle.Regular);
+        }
 
-
-
-
-           SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\sakib\\Documents\\Data.mdf;Integrated Security=True;Connect Timeout=30");
-
-            SqlDataAdapter sda = new SqlDataAdapter("Select * from [Table] where username = '" + usertxt1.Text + "' and password= '" + passtxt1.Text + "'", con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-
-            if(dt.Rows[0][0].ToString()== "1")
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            UserDAO userDAO = new UserDAO();
+            if(userDAO.Authentication(tbEmail.Text, tbPassword.Text))
             {
                 this.Hide();
-
-                MainWindow ss = new MainWindow();
-                ss.Show();
+                MainWindow mainWindow = new MainWindow(userDAO.GetID(tbEmail.Text, tbPassword.Text));
+                mainWindow.FormClosed += (s, args) => this.Close();
+                mainWindow.Show();
             }
-
             else
             {
-                MessageBox.Show("Please check your username or password");
+                MessageBox.Show("Incorrect email or password");
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void lblSignUp_Click(object sender, EventArgs e)
         {
-            RegistrationWindow sd = new RegistrationWindow();
-            sd.Show();
+            this.Hide();
+            RegistrationWindow registrationWindow = new RegistrationWindow();
+            registrationWindow.FormClosed += (s, args) => this.Close();
+            registrationWindow.Show();
+        }
 
+        private void lblForgotPw_Click(object sender, EventArgs e)
+        {
+            ForgotPasswordWindow forgotPasswordWindow = new ForgotPasswordWindow();
+            forgotPasswordWindow.ShowDialog();
         }
     }
 }

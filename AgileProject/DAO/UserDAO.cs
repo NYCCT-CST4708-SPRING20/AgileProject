@@ -111,7 +111,7 @@ namespace AgileProject.DAO
         {
             Boolean found = false;
 
-            MySqlCommand comm = new MySqlCommand(" SELECT COUNT(*) FROM ACCOUNT EMAIL_ADDRESS = @EMAIL ");
+            MySqlCommand comm = new MySqlCommand(" SELECT COUNT(*) FROM ACCOUNT WHERE EMAIL_ADDRESS = @EMAIL ");
             comm.Parameters.AddWithValue("@EMAIL", email);
 
             Check(ref comm, ref found);
