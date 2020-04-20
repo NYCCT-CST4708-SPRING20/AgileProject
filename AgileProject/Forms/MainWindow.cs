@@ -215,8 +215,8 @@ namespace AgileProject.Forms
 
         private void lbUserSetting_Click(object sender, EventArgs e)
         {
-            UserSettingWindow userSetting = new UserSettingWindow();
-            userSetting.Show();
+            UserSettingWindow userSetting = new UserSettingWindow(accountId);
+            userSetting.ShowDialog();
         }
 
         private void lbSignOut_Click(object sender, EventArgs e)
