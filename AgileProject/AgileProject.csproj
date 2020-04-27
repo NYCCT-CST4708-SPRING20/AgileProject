@@ -91,6 +91,12 @@
     <Compile Include="Forms\LoginWindow.Designer.cs">
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PlayerWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlayerWindow.Designer.cs">
+      <DependentUpon>PlayerWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\RegistrationWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlayerWindow.resx">
+      <DependentUpon>PlayerWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RegistrationWindow.resx">
       <DependentUpon>RegistrationWindow.cs</DependentUpon>
@@ -421,6 +430,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\App\Email-Reply-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\App\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\App\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

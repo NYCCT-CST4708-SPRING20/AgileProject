@@ -118,8 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\App\pause.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="abLvB1uZK3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Posters\abLvB1uZK3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UserIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\App\UserIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="n9TsnKGfQq" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Posters\n9TsnKGfQq.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,6 +160,9 @@
   <data name="xkhuIzjiVp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Posters\xkhuIzjiVp.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="play" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\App\play.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="np68l8SunK" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Posters\np68l8SunK.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -165,9 +174,6 @@
   </data>
   <data name="Cqk2xeP1qu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Posters\Cqk2xeP1qu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Email-Reply-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\App\Email-Reply-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="8FHogl5N2w" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Posters\8FHogl5N2w.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,9 +220,6 @@
   <data name="c8WIHhpqj0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Posters\c8WIHhpqj0.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HDs2uRzAic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Posters\HDs2uRzAic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="vi2KGkmZH4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Posters\vi2KGkmZH4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -238,14 +241,17 @@
   <data name="tDztQffPOU" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Posters\tDztQffPOU.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FqgqUAXF4d" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Posters\FqgqUAXF4d.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Email-Reply-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\App\Email-Reply-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="QYJWcrMsVj" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Posters\QYJWcrMsVj.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Q9IAJxprvF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Posters\Q9IAJxprvF.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aZ4Q0ZZ33u" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Posters\aZ4Q0ZZ33u.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FQEIC0bvrv" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Posters\FQEIC0bvrv.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,8 +262,8 @@
   <data name="t6RpFvbQ5G" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Posters\t6RpFvbQ5G.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="aZ4Q0ZZ33u" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Posters\aZ4Q0ZZ33u.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HDs2uRzAic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Posters\HDs2uRzAic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iRqNsSQRxX" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Posters\iRqNsSQRxX.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -313,6 +319,9 @@
   <data name="jcpg9gxHfq" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Posters\jcpg9gxHfq.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FqgqUAXF4d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Posters\FqgqUAXF4d.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="jflUKj78wL" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Posters\jflUKj78wL.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -364,7 +373,7 @@
   <data name="PZgIeQChfO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Posters\PZgIeQChfO.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UserIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\App\UserIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

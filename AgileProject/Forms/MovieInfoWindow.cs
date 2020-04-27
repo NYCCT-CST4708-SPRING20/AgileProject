@@ -83,13 +83,14 @@ namespace AgileProject.Forms
 
             btnPlay.Click += (s, e) =>
             {
-                // Open Play Window
+                (new PlayerWindow(movieId)).Show();
             };
 
             btnPurchase.Click += (s, e) =>
             {
-                BillingFormWindow billing = new BillingFormWindow();
+                BillingFormWindow billing = new BillingFormWindow(movieId, accountId);
                 billing.ShowDialog();
+                MovieInfoWindow_Load(null, EventArgs.Empty);
             };
         }
     }

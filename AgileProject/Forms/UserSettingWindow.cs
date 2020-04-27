@@ -24,18 +24,9 @@ namespace AgileProject.Forms
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             UserDAO userDAO = new UserDAO();
             Account account = userDAO.GetAccountInfo(accountId);
             oldAccount = account;
@@ -44,10 +35,6 @@ namespace AgileProject.Forms
             textBoxEmail.Text = account.email;
         }
 
-        private void textOldpassword_Leave(object sender, EventArgs e)
-        {
-
-        }
 
         private void saveChanges(object sender, EventArgs e)
         {
@@ -92,11 +79,6 @@ namespace AgileProject.Forms
             textBoxOldPassword.Text = "";
             textNewpassword.Text = "";
             confrimPassword.Text = "";
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void textBoxFname_TextChanged(object sender, EventArgs e)

@@ -51,6 +51,7 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(166, 20);
             this.tbPassword.TabIndex = 1;
+            this.tbPassword.UseSystemPasswordChar = true;
             // 
             // lblEmail
             // 

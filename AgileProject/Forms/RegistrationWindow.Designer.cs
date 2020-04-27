@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.lbLogin = new System.Windows.Forms.Label();
             this.lbMsgHaveAcc = new System.Windows.Forms.Label();
             this.btnSignUp = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.lbLastName = new System.Windows.Forms.Label();
             this.lbFirstName = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +72,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(309, 382);
             this.panel1.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(27, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(271, 37);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Join [Placeholder]";
             // 
             // lbLogin
             // 
@@ -111,6 +122,7 @@
             this.tbConfirmPw.Name = "tbConfirmPw";
             this.tbConfirmPw.Size = new System.Drawing.Size(180, 20);
             this.tbConfirmPw.TabIndex = 11;
+            this.tbConfirmPw.UseSystemPasswordChar = true;
             // 
             // tbPassword
             // 
@@ -118,6 +130,7 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(180, 20);
             this.tbPassword.TabIndex = 10;
+            this.tbPassword.UseSystemPasswordChar = true;
             // 
             // tbConfirmEmail
             // 
@@ -217,17 +230,6 @@
             this.label7.Size = new System.Drawing.Size(162, 55);
             this.label7.TabIndex = 1;
             this.label7.Text = "LOGO";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(27, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(271, 37);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Join [Placeholder]";
             // 
             // RegistrationWindow
             // 
