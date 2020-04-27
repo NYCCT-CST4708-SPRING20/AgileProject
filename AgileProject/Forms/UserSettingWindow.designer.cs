@@ -58,7 +58,7 @@
             // changePw
             // 
             this.changePw.Location = new System.Drawing.Point(85, 274);
-            this.changePw.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.changePw.Margin = new System.Windows.Forms.Padding(2);
             this.changePw.Name = "changePw";
             this.changePw.Size = new System.Drawing.Size(167, 28);
             this.changePw.TabIndex = 4;
@@ -69,20 +69,20 @@
             // textNewpassword
             // 
             this.textNewpassword.Location = new System.Drawing.Point(160, 187);
-            this.textNewpassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textNewpassword.Margin = new System.Windows.Forms.Padding(2);
             this.textNewpassword.Name = "textNewpassword";
-            this.textNewpassword.PasswordChar = '*';
             this.textNewpassword.Size = new System.Drawing.Size(152, 20);
             this.textNewpassword.TabIndex = 4;
+            this.textNewpassword.UseSystemPasswordChar = true;
             // 
             // confrimPassword
             // 
             this.confrimPassword.Location = new System.Drawing.Point(160, 217);
-            this.confrimPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.confrimPassword.Margin = new System.Windows.Forms.Padding(2);
             this.confrimPassword.Name = "confrimPassword";
-            this.confrimPassword.PasswordChar = '*';
             this.confrimPassword.Size = new System.Drawing.Size(152, 20);
             this.confrimPassword.TabIndex = 3;
+            this.confrimPassword.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -137,7 +137,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(160, 127);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(152, 20);
             this.textBoxEmail.TabIndex = 7;
@@ -146,7 +146,7 @@
             // textBoxLname
             // 
             this.textBoxLname.Location = new System.Drawing.Point(160, 97);
-            this.textBoxLname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxLname.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxLname.Name = "textBoxLname";
             this.textBoxLname.Size = new System.Drawing.Size(152, 20);
             this.textBoxLname.TabIndex = 8;
@@ -155,7 +155,7 @@
             // textBoxFname
             // 
             this.textBoxFname.Location = new System.Drawing.Point(160, 67);
-            this.textBoxFname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxFname.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxFname.Name = "textBoxFname";
             this.textBoxFname.Size = new System.Drawing.Size(152, 20);
             this.textBoxFname.TabIndex = 9;
@@ -164,11 +164,11 @@
             // textBoxOldPassword
             // 
             this.textBoxOldPassword.Location = new System.Drawing.Point(160, 157);
-            this.textBoxOldPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxOldPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxOldPassword.Name = "textBoxOldPassword";
-            this.textBoxOldPassword.PasswordChar = '*';
             this.textBoxOldPassword.Size = new System.Drawing.Size(152, 20);
             this.textBoxOldPassword.TabIndex = 11;
+            this.textBoxOldPassword.UseSystemPasswordChar = true;
             // 
             // oldPassword
             // 
@@ -200,7 +200,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UserSettingWindow";
