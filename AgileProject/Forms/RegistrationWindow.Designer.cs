@@ -45,13 +45,14 @@
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbLastName = new System.Windows.Forms.Label();
             this.lbFirstName = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lbLogin);
             this.panel1.Controls.Add(this.lbMsgHaveAcc);
@@ -80,9 +81,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(27, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(271, 37);
+            this.label3.Size = new System.Drawing.Size(246, 37);
             this.label3.TabIndex = 15;
-            this.label3.Text = "Join [Placeholder]";
+            this.label3.Text = "Join POPCORN";
             // 
             // lbLogin
             // 
@@ -220,24 +221,22 @@
             this.lbFirstName.TabIndex = 0;
             this.lbFirstName.Text = "First Name:";
             // 
-            // label7
+            // pictureBox1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(26, 151);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(162, 55);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "LOGO";
+            this.pictureBox1.Image = global::AgileProject.Properties.Resources.popcorn_square;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 91);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 195);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // RegistrationWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(517, 382);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RegistrationWindow";
@@ -245,8 +244,8 @@
             this.Load += new System.EventHandler(this.RegistrationWindow_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -266,9 +265,9 @@
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.Label lbLastName;
         private System.Windows.Forms.Label lbFirstName;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbLogin;
         private System.Windows.Forms.Label lbMsgHaveAcc;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
