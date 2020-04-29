@@ -57,5 +57,11 @@ namespace AgileProject.Forms
             ForgotPasswordWindow forgotPasswordWindow = new ForgotPasswordWindow();
             forgotPasswordWindow.ShowDialog();
         }
+
+        private void enter_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                this.btnLogin_Click(null, EventArgs.Empty);
+        }
     }
 }

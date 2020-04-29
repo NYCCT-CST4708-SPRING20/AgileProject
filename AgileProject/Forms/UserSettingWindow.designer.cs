@@ -57,11 +57,11 @@
             // 
             // changePw
             // 
-            this.changePw.Location = new System.Drawing.Point(85, 274);
+            this.changePw.Location = new System.Drawing.Point(85, 262);
             this.changePw.Margin = new System.Windows.Forms.Padding(2);
             this.changePw.Name = "changePw";
             this.changePw.Size = new System.Drawing.Size(167, 28);
-            this.changePw.TabIndex = 4;
+            this.changePw.TabIndex = 7;
             this.changePw.Text = "Save Change";
             this.changePw.UseVisualStyleBackColor = true;
             this.changePw.Click += new System.EventHandler(this.saveChanges);
@@ -72,7 +72,7 @@
             this.textNewpassword.Margin = new System.Windows.Forms.Padding(2);
             this.textNewpassword.Name = "textNewpassword";
             this.textNewpassword.Size = new System.Drawing.Size(152, 20);
-            this.textNewpassword.TabIndex = 4;
+            this.textNewpassword.TabIndex = 5;
             this.textNewpassword.UseSystemPasswordChar = true;
             // 
             // confrimPassword
@@ -81,7 +81,7 @@
             this.confrimPassword.Margin = new System.Windows.Forms.Padding(2);
             this.confrimPassword.Name = "confrimPassword";
             this.confrimPassword.Size = new System.Drawing.Size(152, 20);
-            this.confrimPassword.TabIndex = 3;
+            this.confrimPassword.TabIndex = 6;
             this.confrimPassword.UseSystemPasswordChar = true;
             // 
             // label4
@@ -91,7 +91,7 @@
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 13);
-            this.label4.TabIndex = 1;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Confrim Password:";
             // 
             // label3
@@ -111,7 +111,7 @@
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 13);
-            this.label5.TabIndex = 4;
+            this.label5.TabIndex = 0;
             this.label5.Text = "First name: ";
             // 
             // label6
@@ -121,7 +121,7 @@
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 13);
-            this.label6.TabIndex = 5;
+            this.label6.TabIndex = 0;
             this.label6.Text = "Last name: ";
             // 
             // label7
@@ -131,7 +131,7 @@
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 13);
-            this.label7.TabIndex = 6;
+            this.label7.TabIndex = 0;
             this.label7.Text = "Email address: ";
             // 
             // textBoxEmail
@@ -140,7 +140,7 @@
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(152, 20);
-            this.textBoxEmail.TabIndex = 7;
+            this.textBoxEmail.TabIndex = 3;
             this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged);
             // 
             // textBoxLname
@@ -149,7 +149,7 @@
             this.textBoxLname.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxLname.Name = "textBoxLname";
             this.textBoxLname.Size = new System.Drawing.Size(152, 20);
-            this.textBoxLname.TabIndex = 8;
+            this.textBoxLname.TabIndex = 2;
             this.textBoxLname.TextChanged += new System.EventHandler(this.textBoxLname_TextChanged);
             // 
             // textBoxFname
@@ -158,7 +158,7 @@
             this.textBoxFname.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxFname.Name = "textBoxFname";
             this.textBoxFname.Size = new System.Drawing.Size(152, 20);
-            this.textBoxFname.TabIndex = 9;
+            this.textBoxFname.TabIndex = 1;
             this.textBoxFname.TextChanged += new System.EventHandler(this.textBoxFname_TextChanged);
             // 
             // textBoxOldPassword
@@ -167,7 +167,7 @@
             this.textBoxOldPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxOldPassword.Name = "textBoxOldPassword";
             this.textBoxOldPassword.Size = new System.Drawing.Size(152, 20);
-            this.textBoxOldPassword.TabIndex = 11;
+            this.textBoxOldPassword.TabIndex = 4;
             this.textBoxOldPassword.UseSystemPasswordChar = true;
             // 
             // oldPassword
@@ -177,7 +177,7 @@
             this.oldPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.oldPassword.Name = "oldPassword";
             this.oldPassword.Size = new System.Drawing.Size(71, 13);
-            this.oldPassword.TabIndex = 10;
+            this.oldPassword.TabIndex = 0;
             this.oldPassword.Text = "Old password";
             // 
             // UserSettingWindow
