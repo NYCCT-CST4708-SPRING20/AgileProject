@@ -78,6 +78,8 @@ namespace AgileProject.Forms
 
         private void loadMovies(List<Movie> list)
         {
+            hideDropDowns();
+
             pnMovies.Controls.Clear();
 
             int x = 10, y = 10;
@@ -150,6 +152,7 @@ namespace AgileProject.Forms
 
         private void movieInfoOpen_Click(object sender, EventArgs e, String movieId)
         {
+            hideDropDowns();
             MovieInfoWindow movieInfoWindow = new MovieInfoWindow(movieId, accountId);
             movieInfoWindow.ShowDialog();
         }
@@ -161,6 +164,7 @@ namespace AgileProject.Forms
 
         private void lblGenre_Click(object sender, EventArgs e)
         {
+            pnUserOptions.Visible = false;
             pnGenre.Visible = pnGenre.Visible == true ? false : true;
         }
 
@@ -195,6 +199,7 @@ namespace AgileProject.Forms
 
         private void tbSearch_Click(object sender, EventArgs e)
         {
+            hideDropDowns();
             ShowCaret(tbSearch.Handle);
         }
 
@@ -210,13 +215,17 @@ namespace AgileProject.Forms
 
         private void pbUserIcon_Click(object sender, EventArgs e)
         {
+            pnGenre.Visible = false;
             pnUserOptions.Visible = pnUserOptions.Visible == true ? false : true;
         }
 
         private void lbUserSetting_Click(object sender, EventArgs e)
         {
             UserSettingWindow userSetting = new UserSettingWindow(accountId);
+            pnUserOptions.Visible = false;
             userSetting.ShowDialog();
+            Account account = (new UserDAO()).GetAccountInfo(accountId);
+            lbUserName.Text = account.firstName + " " + account.lastName;
         }
 
         private void lbSignOut_Click(object sender, EventArgs e)
@@ -263,6 +272,12 @@ namespace AgileProject.Forms
         private void lbMyMovies_Click(object sender, EventArgs e)
         {
             loadMovies((new Order()).OrderList(accountId));
+        }
+
+        private void hideDropDowns()
+        {
+            pnGenre.Visible = false;
+            pnUserOptions.Visible = false;
         }
     }
 }
