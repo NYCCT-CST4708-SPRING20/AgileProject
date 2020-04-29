@@ -38,6 +38,12 @@ namespace AgileProject.Forms
 
         private void saveChanges(object sender, EventArgs e)
         {
+            if(textBoxOldPassword.Text == "")
+            {
+                MessageBox.Show("You need to enter your current password to make changes!");
+                return;
+            }
+
             UserDAO userDAO = new UserDAO();
             Account account = userDAO.GetAccountInfo(accountId);
 
@@ -75,7 +81,9 @@ namespace AgileProject.Forms
             {
                 MessageBox.Show("Incorrect old password. ");
             }
+
             MessageBox.Show("All changes updated. ");
+
             textBoxOldPassword.Text = "";
             textNewpassword.Text = "";
             confrimPassword.Text = "";
